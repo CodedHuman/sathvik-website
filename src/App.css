@@ -156,6 +156,38 @@ body, html {
   }
 }
 
+/* Dropdown menu */
+.dropdown-menu {
+  display: none; /* Hide dropdown menu by default */
+  position: absolute; /* Position absolute for dropdown menu */
+  top: 100%; /* Align dropdown menu below the name */
+  left: 0;
+  background-color: #333; /* Dark background color for dropdown menu */
+  padding: 10px;
+  transition: opacity 0.3s ease; /* Add smooth transition */
+}
+
+/* Media query for small screens (max width 600px) */
+@media only screen and (max-width: 600px) {
+  .nav-content {
+    justify-content: center; /* Center align navigation on small screens */
+  }
+
+  .nav-left:hover .dropdown-menu {
+    display: block; /* Display dropdown menu on hover */
+    opacity: 1; /* Show dropdown menu with smooth transition */
+  }
+
+  .nav-right {
+    display: none; /* Hide navigation buttons by default */
+  }
+
+  .nav-right button {
+    display: block; /* Display buttons in dropdown menu */
+    margin: 5px 0; /* Add margin between buttons */
+  }
+}
+
 .footer {
   position: fixed;
   bottom: 0;
