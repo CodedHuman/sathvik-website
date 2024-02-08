@@ -1,0 +1,100 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: lightgray;
+  background-color: #29222c;
+  font-family: 'Merriweather Sans', sans-serif; /* Apply Merriweather Sans font to the entire website */
+}
+
+.App {
+  text-align: center;
+}
+
+.header-content, .page-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight: lighter;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-left {
+  color: lightgray; /* Change text color as needed */
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-left:hover {
+  color: white; /* Change text color on hover */
+}
+
+.nav-right {
+  font-size: 14px;
+}
+
+.nav-right button {
+  transition: background-color 0.3s ease;
+}
+
+.nav-right button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.nav-right button {
+  margin-left: 10px;
+  color: lightgray; /* Change button text color as needed */
+  background-color: transparent; /* Change button background color as needed */
+  border: none;
+  cursor: pointer;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #00ff00, #ff00ff); /* Adjust colors as needed */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto; /* Double the size to allow for smooth movement */
+  animation: animateGradient 6s linear infinite; /* Adjust animation duration and timing as needed */
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%; /* Start from left */
+  }
+  50% {
+    background-position: 100% 50%; /* Move to right */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to left */
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; /* Use viewport width to prevent horizontal scroll */
+  color: lightgray; /* Change text color as needed */
+  padding: 20px;
+  text-align: center;
+}
