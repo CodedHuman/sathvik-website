@@ -9,7 +9,7 @@ const Header = () => {
         Sathvik Ganti<span className="bold"> </span> {/* Add space between name and cursor */}
         <span className="blinking-cursor"></span>
       </h1>
-      <p>Welcome to my website</p>
+      <p>I'm a web developer pursuing Statistics & Computer Science <b>@ Urbana-Champaign</b></p>
     </div>
   );
 }

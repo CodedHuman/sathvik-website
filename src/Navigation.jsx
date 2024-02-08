@@ -1,18 +1,19 @@
 // Navigation.jsx
 import React from 'react';
-import { FaUser, FaBriefcase, FaProjectDiagram } from 'react-icons/fa'; // Import icons from react-icons library
 
 const Navigation = ({ setCurrentPage }) => {
   return (
     <div className="navigation">
       <div className="nav-content">
+        <div className="nav-left" onClick={() => setCurrentPage('Header')}>
+          <span style={{ fontWeight: 'bold' }}>SG</span>
+        </div>
         <div className="nav-right">
-          <button onClick={() => setCurrentPage('AboutMe')}><FaUser /></button>
-          <button onClick={() => setCurrentPage('Projects')}><FaProjectDiagram /></button>
-          <button onClick={() => setCurrentPage('Experience')}><FaBriefcase /></button>
+          <button onClick={() => setCurrentPage('AboutMe')}>About Me</button>
+          <button onClick={() => setCurrentPage('Projects')}>Projects</button>
+          <button onClick={() => setCurrentPage('Experience')}>Experience</button>
         </div>
       </div>
-      <b><span className="initials" onClick={() => setCurrentPage('Header')}>SG</span></b> {/* Click action for initials "SG" */}
     </div>
   );
 }

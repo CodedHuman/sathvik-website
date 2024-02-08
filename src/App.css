@@ -16,79 +16,58 @@ body, html {
 .header-content, .page-container {
   position: absolute;
   top: 50%;
-  left: calc(50% - 300px); /* Adjust the left position */
-  transform: translate(-50%, -50%);
-  text-align: left; /* Align text to the left */
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .navigation {
   position: fixed;
   top: 0;
-  right: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end; /* Align navigation content to the top right corner */
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
 }
 
 .nav-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the navigation buttons horizontally */
   align-items: center;
   padding: 20px;
 }
 
 .nav-left {
-  margin-bottom: auto;
-  font-size: 24px;
-  color: lightgray;
+  position: absolute;
+  left: 30px; /* Adjust the distance from the left edge */
+  top: 30px; /* Adjust the distance from the top edge */
+  color: lightgray; /* Change text color as needed */
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer; /* Add cursor pointer for better UX */
+  transition: color 0.3s ease; /* Add transition for color change */
+}
+
+.nav-left:hover {
+  color: white; /* Change text color on hover */
 }
 
 .nav-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center icons horizontally */
+  font-size: 14px;
 }
 
 .nav-right button {
-  margin: 20px 0; /* Adjust vertical spacing between icons */
-  background-color: rgba(180, 170, 200, 0.1); /* Use lighter purple hue */
-  border: none;
-  cursor: pointer;
-  outline: none;
   transition: background-color 0.3s ease;
-  border-radius: 50%;
-  padding: 15px; /* Increase padding to make clickable region larger */
-  display: flex; /* Ensure icons are centered vertically */
-  justify-content: center; /* Ensure icons are centered vertically */
-  align-items: center; /* Ensure icons are centered vertically */
-}
-
-.nav-right button svg {
-  width: 30px;
-  height: 30px;
-  color: rgba(180, 170, 200, 0.8); /* Set icon color */
 }
 
 .nav-right button:hover {
-  background-color: rgba(180, 170, 200, 0.3); /* Lighten the background color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+  border-radius: 5px; /* Optional: Add rounded corners */
 }
 
-.initials {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  color: rgba(180, 170, 200, 0.8);
-  transition: color 0.3s ease; /* Add transition effect for color change */
+.nav-right button {
+  margin-left: 10px;
+  color: lightgray; /* Change button text color as needed */
+  background-color: transparent; /* Change button background color as needed */
+  border: none;
   cursor: pointer;
-  right: calc(30px);
-}
-
-.initials:hover {
-  color: rgba(180, 170, 200, 1); /* Change color on hover */
 }
 
 .gradient-text {
@@ -97,45 +76,6 @@ body, html {
   -webkit-text-fill-color: transparent;
   background-size: 200% auto; /* Double the size to allow for smooth movement */
   animation: animateGradient 6s linear infinite; /* Adjust animation duration and timing as needed */
-}
-
-.blinking-cursor {
-  display: inline-block;
-  width: 4px; /* Adjust the width of the cursor */
-  height: 1em;
-  background-color: white; /* Change the color of the cursor */
-  animation: blink 1s infinite; /* Set blinking animation */
-}
-
-.spinning-black-hole {
-  width: 50px; /* Adjust the size of the black hole */
-  height: 50px; /* Adjust the size of the black hole */
-  border: 2px solid transparent;
-  border-radius: 50%;
-  border-top-color: #000; /* Set border color to black */
-  animation: spin 1s linear infinite; /* Set spinning animation */
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg); /* Rotate the black hole 360 degrees */
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.bold {
-  font-weight: bold; /* Make the text bold */
 }
 
 @keyframes animateGradient {
@@ -150,41 +90,24 @@ body, html {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .header-content, .page-container {
-    left: 20px; /* Adjust the left position for smaller screens */
-  }
+.blinking-cursor {
+  display: inline-block;
+  width: 5px;
+  height: 40px;
+  background-color: lightgray; /* Change cursor line color as needed */
+  margin-left: 5px; /* Adjust the distance from the text */
+  animation: blinkCursor 1s infinite; /* Blinking animation */
 }
 
-/* Dropdown menu */
-.dropdown-menu {
-  display: none; /* Hide dropdown menu by default */
-  position: absolute; /* Position absolute for dropdown menu */
-  top: 100%; /* Align dropdown menu below the name */
-  left: 0;
-  background-color: #333; /* Dark background color for dropdown menu */
-  padding: 10px;
-  transition: opacity 0.3s ease; /* Add smooth transition */
-}
-
-/* Media query for small screens (max width 600px) */
-@media only screen and (max-width: 600px) {
-  .nav-content {
-    justify-content: center; /* Center align navigation on small screens */
+@keyframes blinkCursor {
+  0% {
+    opacity: 1;
   }
-
-  .nav-left:hover .dropdown-menu {
-    display: block; /* Display dropdown menu on hover */
-    opacity: 1; /* Show dropdown menu with smooth transition */
+  50% {
+    opacity: 0;
   }
-
-  .nav-right {
-    display: none; /* Hide navigation buttons by default */
-  }
-
-  .nav-right button {
-    display: block; /* Display buttons in dropdown menu */
-    margin: 5px 0; /* Add margin between buttons */
+  100% {
+    opacity: 1;
   }
 }
 
