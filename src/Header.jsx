@@ -1,14 +1,16 @@
-// components/Header.js
+// Header.jsx
 import React from 'react';
 
-const Header = ({ title }) => {
+const Header = () => {
   return (
-    <header className="header">
-      <div className="header-content">
-        <h1 className="name">Hey, I am <span className="gradient-text">Sathvik Ganti</span></h1>
-        <p>Welcome to my website</p>
-      </div>
-    </header>
+    <div className="header-content">
+      <h1>Hey, I am</h1>
+      <h1 className="gradient-text">
+        Sathvik Ganti<span className="bold"> </span> {/* Add space between name and cursor */}
+        <span className="blinking-cursor"></span>
+      </h1>
+      <p>Welcome to my website</p>
+    </div>
   );
 }
 
