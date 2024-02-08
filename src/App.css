@@ -5,8 +5,9 @@ body, html {
   padding: 0;
   height: 100%;
   color: lightgray;
-  background-color: #29222c;
   font-family: 'Merriweather Sans', sans-serif; /* Apply Merriweather Sans font to the entire website */
+  /* Apply gradient background */
+  background: radial-gradient(circle, #29222c, #3a3041); /* Adjust gradient stops */
 }
 
 .App {
